@@ -31,17 +31,17 @@ class Restaurants extends React.Component {
 
     async componentDidMount() {
         const snapshot = await all();
-        const restaurants = [];
+        const restaurantes = [];
 
         snapshot.forEach(doc => {
-            restaurants.push({
+            restaurantes.push({
                 id: doc.id,
                 ...doc.data()
             })
         });
-
+        
         this.setState({
-            restaurants
+            restaurantes
         });
     
     }
@@ -49,7 +49,7 @@ class Restaurants extends React.Component {
 
     render() {
 
-        const { restaurants } = this.state;
+        const { restaurantes } = this.state;
         return (
             <Container>
 
@@ -58,7 +58,7 @@ class Restaurants extends React.Component {
                     Votar
                     </Title>
                 </Wrapper>
-                <restaurantsList restaurants={restaurants} /> 
+                <restaurantsList restaurantes={restaurantes} /> 
             </Container>
         );
     }

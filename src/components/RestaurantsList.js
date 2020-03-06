@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Table } from 'semantic-ui-react';
+// import { FieldLink } from './Text';
 // https://react.semantic-ui.com/
+
+
 
 const Content = styled.div`
     width: 100%;
