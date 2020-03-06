@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { all} from '../services/Restaurant';
+import restaurantsList from '../components/RestaurantsList';
 
 
 // end / disabling database calls without breaking the page
@@ -26,27 +27,29 @@ const Wrapper = styled.section`
   background: papayawhip;
 `;
 
-class Home extends React.Component {
+class Restaurants extends React.Component {
 
     async componentDidMount() {
         const snapshot = await all();
-        const users = [];
+        const restaurants = [];
 
         snapshot.forEach(doc => {
-            users.push({
+            restaurants.push({
                 id: doc.id,
                 ...doc.data()
             })
         });
 
         this.setState({
-            users
+            restaurants
         });
-        console.log(users[0].name)
+    
     }
 
 
     render() {
+
+        const { restaurants } = this.state;
         return (
             <Container>
 
@@ -55,10 +58,10 @@ class Home extends React.Component {
                     Votar
                     </Title>
                 </Wrapper>
-                            
+                <restaurantsList restaurants={restaurants} /> 
             </Container>
         );
     }
 }
 
-export default Home;
+export default Restaurants;
