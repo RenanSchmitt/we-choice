@@ -42,6 +42,12 @@ function Row(props) {
 class RestaurantsList extends Component {
 
     render() {
+
+		if (sessionStorage.getItem('isLogged') !== 'yes'){
+            alert('Por favor, faça login com seu email!');
+            window.location.href = "/Login";
+        }
+
         
 		const restaurantes = this.props.restaurantes.map(restaurantsList => <Row key={restaurantsList.id} restaurantsList={restaurantsList} />);
         return (
