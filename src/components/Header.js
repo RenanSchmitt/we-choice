@@ -1,47 +1,72 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import image from '../images/logo192.png'
 
-
-
-
-// end / disabling database calls without breaking the page
-
-// import { isAuthenticated } from '../services/Auth';
-// import { Redirect } from 'react-router-dom';
-
-const Container = styled.div`
-    padding-top: 80px;
-    padding-left: 10px;
-    padding-right: 10px;
+const Content = styled.div`
+    background-color: LightCoral;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    top: 0;
+    left: 0;
+    right: 0;
 `;
+
+const Logo = styled.div`
+width: 50px;
+height: 50px;
+margin: 1%;
+background-size: contain;
+background-image: url(${image});
+    align-self: center;
+`;
+
+
 
 const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
-  color: palevioletred;
+  color: white;
+  font-family: "Verdana", Arial;
 `;
 
-// Create a Wrapper component that'll render a <section> tag with some styles
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
+const NavSection = styled.div`
+    align-self: center;
+    display: flex;
 `;
+
+const NavLink = styled(Link)`
+    font-family: "Verdana", Arial;
+    text-decoration:none;  
+    color: white;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    &:hover {
+        color: pink;
+    }
+`;
+
+
+// Create a Wrapper component that'll render a <section> tag with some styles
+
 
 class Header extends React.Component {
 
     render() {
         return (
-            <Container>
-                <Wrapper>
-                    <Title>
-                    WeChoice
-                    </Title>
-                    <Link to={"/Home"}>Home</Link>
-                    <Link to={"/restaurants"}>Restaurantes</Link>
-                    <Link to={"/Dashboard"}>Dashboard</Link>
-                </Wrapper>  
-            </Container>
+            <Content>
+                <Logo />
+                    <Title> WeChoice </Title>
+                    <NavSection>
+                        <NavLink  to={"/Home"}>Home</NavLink >
+                        <NavLink  to={"/restaurants"}>Restaurantes</NavLink >
+                        <NavLink  to={"/Dashboard"}>Dashboard</NavLink >
+                    </NavSection>
+            </Content>
         );
     }
 }

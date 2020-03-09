@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from '../images/logo192.png';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 
@@ -40,7 +39,6 @@ class Home extends React.Component {
                 <Header/>
 
 
-                <img src={Logo} alt="logo" />
                             
             </Container>
         );
