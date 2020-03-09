@@ -11,6 +11,17 @@ const Container = styled.div`
     padding-right: 10px;
 `;
 
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
+
 class Authentication extends React.Component {
 
     constructor(props) {
@@ -57,7 +68,11 @@ class Authentication extends React.Component {
     render() {
         return (
             <Container>
-                
+                <Wrapper>
+                    <Title>
+                        Login
+                    </Title>
+                </Wrapper>
                 <Grid>
                     <Row>
                         <Col lg={12}>

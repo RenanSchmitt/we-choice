@@ -113,19 +113,19 @@ class LoginForm extends Component {
         return (
             <Content>
                 <Top>
-                    <Title>WeChoice Login</Title>
+                    <Title>WeChoice </Title>
                 </Top>
                 <Form onSubmit={this.submit}>
                     <Form.Input
                         label="E-mail" 
-                        placeholder="Digite seu e-mail da Yara" 
+                        placeholder="Digite seu e-mail: " 
                         spellCheck="false"
                         onChange={this.handleChange('username')} 
                         value={username} >
                     </Form.Input>
                     <Form.Input
                         label="Senha" 
-                        placeholder="Digite sua senha"
+                        placeholder="Digite sua senha:"
                         type="password"
                         onChange={this.handleChange('password')} 
                         value={password} >
