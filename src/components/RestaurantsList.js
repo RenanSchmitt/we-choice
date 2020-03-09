@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Table } from 'semantic-ui-react';
 import Restaurants from '../screens/Restaurants';
-// import { FieldLink } from './Text';
+import { Link } from 'react-router-dom';
+
+
 // https://react.semantic-ui.com/
 
 
@@ -34,6 +36,7 @@ function Row(props) {
 		<Table.Row>
 			<Table.Cell>{restaurantsList.name}</Table.Cell>
 			<Table.Cell>{restaurantsList.description}</Table.Cell>
+			<Table.Cell> <Link to={'Votar/' + restaurantsList.id}> Votar </Link></Table.Cell>
 		</Table.Row>
 	);
 }
@@ -56,12 +59,17 @@ class RestaurantsList extends Component {
 					<Table size='small'>
 						<Table.Header>
 							<Table.Row>
-								<Table.HeaderCell collapsing rowSpan='2'>Restaurante</Table.HeaderCell>
+								<Table.HeaderCell collapsing rowSpan='3'>Restaurante</Table.HeaderCell>
   
 							</Table.Row>
                             <Table.Row>
-								<Table.HeaderCell collapsing rowSpan='2'>Culinaria</Table.HeaderCell>
+								<Table.HeaderCell collapsing rowSpan='3'>Culinaria</Table.HeaderCell>
 							</Table.Row>
+							<Table.Row>
+								<Table.HeaderCell collapsing rowSpan='3'>Vote</Table.HeaderCell>
+							</Table.Row>
+
+							
 						</Table.Header>
     	        		<Table.Body>
     	        		  	{ restaurantes }

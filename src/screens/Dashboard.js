@@ -29,6 +29,10 @@ const Wrapper = styled.section`
 class Home extends React.Component {
 
     render() {
+        if (sessionStorage.getItem('isLogged') !== 'yes'){
+            alert('Por favor, faça login com seu email!');
+            window.location.href = "/Login";
+        }
         return (
             <Container>
 
