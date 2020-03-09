@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { all} from '../services/Restaurant';
-import restaurantsList from '../components/RestaurantsList';
+import RestaurantsList from '../components/RestaurantsList';
 
 
 // end / disabling database calls without breaking the page
@@ -28,6 +28,17 @@ const Wrapper = styled.section`
 `;
 
 class Restaurants extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            restaurantes: [],
+            isGeneratingReport: false
+        }
+
+    }
+
 
     async componentDidMount() {
         const snapshot = await all();
@@ -58,7 +69,7 @@ class Restaurants extends React.Component {
                     Votar
                     </Title>
                 </Wrapper>
-                <restaurantsList restaurantes={restaurantes} /> 
+                <RestaurantsList  restaurantes={restaurantes} /> 
             </Container>
         );
     }
