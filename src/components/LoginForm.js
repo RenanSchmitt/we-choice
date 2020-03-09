@@ -118,6 +118,7 @@ class LoginForm extends Component {
                 <Form onSubmit={this.submit}>
                     <Form.Input
                         label="E-mail" 
+                        type="email"
                         placeholder="Digite seu e-mail: " 
                         spellCheck="false"
                         onChange={this.handleChange('username')} 

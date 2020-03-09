@@ -49,14 +49,13 @@ class Authentication extends React.Component {
         });
             users.forEach( user => {
                 if( data.username === user.email && `${data.password}` === `${user.password}`){
-                    sessionStorage.setItem('collaborator_name', user.name);
-                    sessionStorage.setItem('collaborator_email', user.email);
-                    sessionStorage.setItem('management_list', user.password);
-                    sessionStorage.setItem('id',user.id)
+                    sessionStorage.setItem('sessionName', user.name);
+                    sessionStorage.setItem('sessionEmail', user.email);
+                    sessionStorage.setItem('sessionId',user.id)
                     sessionStorage.setItem('isLogged', 'yes');
                     auth = 'yes';
                     this.form.current.reset();
-                    window.location.href = "/ReportarIncidente";
+                    window.location.href = "/Restaurants";
                     return
                 }
             })
