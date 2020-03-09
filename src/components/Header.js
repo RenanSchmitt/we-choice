@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-
 
 
 
@@ -30,22 +28,22 @@ const Wrapper = styled.section`
   background: papayawhip;
 `;
 
-class Home extends React.Component {
+class Header extends React.Component {
 
     render() {
-        if (sessionStorage.getItem('isLogged') !== 'yes'){
-            alert('Por favor, faça login com seu email!');
-            window.location.href = "/Login";
-        }
         return (
             <Container>
-
-                <Header/>
-
-                            
+                <Wrapper>
+                    <Title>
+                    WeChoice
+                    </Title>
+                    <Link to={"/Home"}>Home</Link>
+                    <Link to={"/restaurants"}>Restaurantes</Link>
+                    <Link to={"/Dashboard"}>Dashboard</Link>
+                </Wrapper>  
             </Container>
         );
     }
 }
 
-export default Home;
+export default Header;

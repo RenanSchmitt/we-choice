@@ -2,12 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { all} from '../services/Restaurant';
 import RestaurantsList from '../components/RestaurantsList';
+import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 
 
-// end / disabling database calls without breaking the page
-
-// import { isAuthenticated } from '../services/Auth';
-// import { Redirect } from 'react-router-dom';
 
 const Container = styled.div`
     padding-top: 80px;
@@ -63,12 +61,7 @@ class Restaurants extends React.Component {
         const { restaurantes } = this.state;
         return (
             <Container>
-
-                <Wrapper>
-                    <Title>
-                    Votar
-                    </Title>
-                </Wrapper>
+                <Header/>
                 <RestaurantsList  restaurantes={restaurantes} /> 
             </Container>
         );
