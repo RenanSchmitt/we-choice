@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 const Content = styled.div`
     width: 30%;
-    background-color: #fff000;
+    background-color: #ffffff;
     padding: 40px 0;
 	border-radius: 10px;
 	border: 1px solid black;

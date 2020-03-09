@@ -30,6 +30,7 @@ const Title = styled.h1`
   font-size: 2em;
   text-align: center;
   color: white;
+  margin-left: 16%;
   font-family: "Verdana", Arial;
 `;
 
