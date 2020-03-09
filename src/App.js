@@ -5,6 +5,8 @@ import Restaurants from './screens/Restaurants';
 import Dashboard from './screens/Dashboard';
 import Authentication from './screens/Authentication';
 import Votar from './screens/Votar';
+import Logout from './screens/Logout';
+
 
 
 import './App.css';
@@ -19,6 +21,8 @@ const App = () => (
       <Route path="/Dashboard" exact component={Dashboard} />
       <Route path="/Login" exact component={Authentication} />
       <Route path="/Votar/:id" exact component={Votar} />
+      <Route path="/Logout" exact component={Logout} />
+
     </div>
   </Router>
 );

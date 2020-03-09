@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import image from '../images/logo192.png'
 
 const Content = styled.div`
-    background-color: LightCoral;
+    background-color: #FF6347;
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -46,13 +46,9 @@ const NavLink = styled(Link)`
     font-size: 15px;
     font-weight: 500;
     &:hover {
-        color: pink;
+        color: #FFA500;
     }
 `;
-
-
-// Create a Wrapper component that'll render a <section> tag with some styles
-
 
 class Header extends React.Component {
 
@@ -61,10 +57,12 @@ class Header extends React.Component {
             <Content>
                 <Logo />
                     <Title> WeChoice </Title>
+
                     <NavSection>
                         <NavLink  to={"/Home"}>Home</NavLink >
                         <NavLink  to={"/restaurants"}>Restaurantes</NavLink >
                         <NavLink  to={"/Dashboard"}>Dashboard</NavLink >
+                        <NavLink  to={"/Logout"}>Logout</NavLink >
                     </NavSection>
             </Content>
         );

@@ -15,21 +15,6 @@ const Content = styled.div`
     }
 `;
 
-const Top = styled.div`
-    width: 100%;
-    margin-bottom: 20px;
-`;
-
-
-const Title = styled.h1`
-    font-family: "Titillium Web", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 44px;
-    padding-left: 10px;
-    text-align: center;
-`;
-
 const Controls = styled.div`
     display: flex;
     justify-content: flex-end;
@@ -112,9 +97,6 @@ class LoginForm extends Component {
        
         return (
             <Content>
-                <Top>
-                    <Title>WeChoice </Title>
-                </Top>
                 <Form onSubmit={this.submit}>
                     <Form.Input
                         label="E-mail" 

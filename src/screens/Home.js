@@ -37,7 +37,7 @@ class Home extends React.Component {
             <Container>
 
                 <Header/>
-
+                <Title> Home</Title>
 
                             
             </Container>

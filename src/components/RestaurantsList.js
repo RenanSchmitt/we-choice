@@ -10,14 +10,15 @@ import { Link } from 'react-router-dom';
 
 
 const Content = styled.div`
-    width: 100%;
-    background-color: white;
+    width: 30%;
+    background-color: #fff000;
     padding: 40px 0;
-    border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid black;
 	margin: 0 auto;
     @media only screen and (max-width: 600px) {
         padding: 20px 10px;
-    }
+	}
 `;
 
 const Overflow = styled.div`
@@ -68,8 +69,6 @@ class RestaurantsList extends Component {
 							<Table.Row>
 								<Table.HeaderCell collapsing rowSpan='3'>Vote</Table.HeaderCell>
 							</Table.Row>
-
-							
 						</Table.Header>
     	        		<Table.Body>
     	        		  	{ restaurantes }
