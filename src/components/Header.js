@@ -13,7 +13,7 @@ const Content = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    border-bottom-style: outset;
+    border-style: outset;
     border-color: #grey;
 `;
 
