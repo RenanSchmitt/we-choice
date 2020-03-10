@@ -32,7 +32,7 @@ const Overflow = styled.div`
 const TableView = styled.table`
 	text-align: center;
 	border-radius: 10px;
-	background: #FFFFE0;
+	background: #F8F8FF;
 	width: 100%;
 	border: 1px solid black;
 `

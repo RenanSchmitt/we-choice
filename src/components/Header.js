@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import image from '../images/logo192.png'
 
 const Content = styled.div`
-    background-color: #FF6347;
+    background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -13,6 +13,8 @@ const Content = styled.div`
     top: 0;
     left: 0;
     right: 0;
+    border-bottom-style: outset;
+    border-color: #grey;
 `;
 
 const Logo = styled.div`
@@ -29,7 +31,7 @@ background-image: url(${image});
 const Title = styled.h1`
   font-size: 2em;
   text-align: center;
-  color: white;
+  color: #FF6347;
   margin-left: 16%;
   font-family: "Verdana", Arial;
 `;
@@ -42,7 +44,7 @@ const NavSection = styled.div`
 const NavLink = styled(Link)`
     font-family: "Verdana", Arial;
     text-decoration:none;  
-    color: white;
+    color: #000;
     padding: 10px 15px;
     font-size: 15px;
     font-weight: 500;

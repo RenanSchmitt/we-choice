@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Table } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+// import { ImageTable } from './TableComponents'
 
 
 // https://react.semantic-ui.com/
@@ -32,7 +33,7 @@ const Overflow = styled.div`
 const TableView = styled.table`
 	text-align: center;
 	border-radius: 10px;
-	background: #FFFFE0;
+	background: #F8F8FF;
 	width: 100%;
 	border: 1px solid black;
 `
