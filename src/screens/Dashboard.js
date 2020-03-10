@@ -1,16 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { all} from '../services/Restaurant';
+import DashboardList from '../components/DashboardList';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 
 
-
-
-
-// end / disabling database calls without breaking the page
-
-// import { isAuthenticated } from '../services/Auth';
-// import { Redirect } from 'react-router-dom';
 
 const Container = styled.div`
     padding-top: 80px;
@@ -30,22 +25,47 @@ const Wrapper = styled.section`
   background: papayawhip;
 `;
 
-class Home extends React.Component {
+class Dashboard extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            restaurantes: [],
+            isGeneratingReport: false
+        }
+
+    }
+
+
+    async componentDidMount() {
+        const snapshot = await all();
+        const restaurantes = [];
+
+        snapshot.forEach(doc => {
+            restaurantes.push({
+                id: doc.id,
+                ...doc.data()
+            })
+        });
+        
+        this.setState({
+            restaurantes
+        });
+    
+    }
+
 
     render() {
-        if (sessionStorage.getItem('isLogged') !== 'yes'){
-            alert('Por favor, faça login com seu email!');
-            window.location.href = "/Login";
-        }
+
+        const { restaurantes } = this.state;
         return (
             <Container>
-
                 <Header/>
-
-                            
+                <DashboardList  restaurantes={restaurantes} /> 
             </Container>
         );
     }
 }
 
-export default Home;
+export default Dashboard;

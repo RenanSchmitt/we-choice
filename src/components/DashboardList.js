@@ -44,13 +44,13 @@ function Row(props) {
 		<Table.Row>
 			<Table.Cell>{restaurantsList.name}</Table.Cell>
 			<Table.Cell>{restaurantsList.description}</Table.Cell>
-			<Table.Cell><Link to={'Votar/' + restaurantsList.id}> Votar </Link></Table.Cell>
+			<Table.Cell>{restaurantsList.n_votes}</Table.Cell>
 		</Table.Row>
 	);
 }
 
 
-class RestaurantsList extends Component {
+class DashboardList extends Component {
 
     render() {
 
@@ -87,4 +87,4 @@ class RestaurantsList extends Component {
 	}
 }
 
-export default RestaurantsList;
+export default DashboardList;

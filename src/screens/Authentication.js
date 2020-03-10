@@ -18,11 +18,6 @@ const Title = styled.h1`
   color: palevioletred;
 `;
 
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
-`;
-
 class Authentication extends React.Component {
 
     constructor(props) {
@@ -68,12 +63,9 @@ class Authentication extends React.Component {
     render() {
         return (
             <Container>
-                <Header />
-                <Wrapper>
                     <Title>
                         Login
                     </Title>
-                </Wrapper>
                 <Grid>
                     <Row>
                         <Col lg={12}>
