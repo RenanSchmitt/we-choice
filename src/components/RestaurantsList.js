@@ -37,11 +37,18 @@ const TableView = styled.table`
 	border: 1px solid black;
 `
 
+const ImageTable = styled.img`
+width: 45px;
+height: 45px;
+
+`
+
 function Row(props) {
 	const { restaurantsList } = props;
 	return (
 
 		<Table.Row>
+			<Table.Cell><ImageTable src={restaurantsList.image}></ImageTable></Table.Cell>
 			<Table.Cell>{restaurantsList.name}</Table.Cell>
 			<Table.Cell>{restaurantsList.description}</Table.Cell>
 			<Table.Cell><Link to={'Votar/' + restaurantsList.id}> Votar </Link></Table.Cell>
