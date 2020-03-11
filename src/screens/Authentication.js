@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import LoginForm from '../components/LoginForm';
 import { getUsers } from '../services/User';
-import Header from  '../components/Header';
 
 const Container = styled.div`
     padding-top: 80px;
@@ -49,6 +48,7 @@ class Authentication extends React.Component {
                     sessionStorage.setItem('sessionEmail', user.email);
                     sessionStorage.setItem('sessionId',user.id)
                     sessionStorage.setItem('isLogged', 'yes');
+                    sessionStorage.setItem('isVoted', user.isVoted)
                     auth = 'yes';
                     this.form.current.reset();
                     window.location.href = "/Restaurants";

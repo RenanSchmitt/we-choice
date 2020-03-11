@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Table } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-// import { ImageTable } from './TableComponents'
-
-
-// https://react.semantic-ui.com/
-
-
 
 const Content = styled.div`
     width: 100%;
@@ -53,6 +46,7 @@ function Row(props) {
 			<Table.Cell>{restaurantsList.name}</Table.Cell>
 			<Table.Cell>{restaurantsList.description}</Table.Cell>
 			<Table.Cell>{restaurantsList.n_votes}</Table.Cell>
+
 		</Table.Row>
 	);
 }
@@ -67,9 +61,9 @@ class DashboardList extends Component {
             window.location.href = "/Login";
         }
 
-        
 		const restaurantes = this.props.restaurantes.map(restaurantsList => <Row key={restaurantsList.id} restaurantsList={restaurantsList} />);
-        return (
+
+		return (
 			<Content>
 				<Overflow>
 					<TableView size='small'>

@@ -14,3 +14,9 @@ export const updatePassword = async (id, data) => {
     const db = getFirestoreClient();
     return await db.collection('users').doc(id).update(data);
 }
+
+export const voteValidation = async (id, data) => {
+    const db = getFirestoreClient();
+    return await db.collection('users').doc(id).update(data);
+}
+

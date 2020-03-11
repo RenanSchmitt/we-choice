@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
 import { vote, unique  } from '../services/Restaurant';
-import { Redirect } from 'react-router-dom';
+import { voteValidation  } from '../services/User';
 
 const Container = styled.div`
     padding-top: 80px;
@@ -10,8 +9,6 @@ const Container = styled.div`
     padding-left: 10px;
     padding-right: 10px;
 `;
-
-
 
 class Votar extends React.Component {
 
@@ -22,12 +19,20 @@ class Votar extends React.Component {
         const restaurant = await unique(id);
         let nvotes = parseInt(restaurant._document.proto.fields.n_votes.integerValue) + parseInt(1);
         const data = {n_votes: nvotes }
+        const flag = {isVoted: 'yes' }
+        
         if (confirm===true){
-            await vote(id, data);
-            window.location.href = "/restaurants";
+            if(sessionStorage.getItem('isVoted') === 'not'){
+                await vote(id, data);
+                await voteValidation(sessionStorage.getItem('sessionId'), flag);
+                sessionStorage.setItem('isVoted', 'yes');
+            } else {
+                alert("Você não pode votar mais de uma vez por dia!")
+            }
         } else {
-            window.location.href = "/restaurants";
+            
         }
+        window.location.href = "/restaurants";
     }
 
     render() {
